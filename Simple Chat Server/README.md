@@ -1,4 +1,4 @@
-# Simple-Chat-Server
+# Simple Chat Server
 A minimalistic chat server with user muting and private messaging capabilities.  
 * Developed for COMP 2406 (Fundamentals of Web Applications), Winter 2017, at Carleton University
 

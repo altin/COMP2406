@@ -1,0 +1,7 @@
+{
+	"name":"Spiderman",
+	"alterEgo":"Peter Parker",
+	"jurisdiction": "New York City",
+	"superpowers":["Danger Sense", "Enhanced Agility", "Enhanced Strength", "Wall Crawling", "Web Slinging"],
+	"style":{"backgroundColor":"#0a2b4e","color":"#d71814"}
+}

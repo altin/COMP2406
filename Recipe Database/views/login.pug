@@ -1,0 +1,32 @@
+//-
+    COMP 2406A (Winter 2017): Assignment #4 - Altin Rexhepaj (101000622)
+    Sources: Professor's course notes (Dr. Andrew Runka)
+
+block head
+    title Recipes Database
+    link(rel="stylesheet", href="./public/style.css")
+
+h1 Recipes Database
+h2 Log in
+
+if message
+    p#message=message
+
+form(action="/login", method="POST")
+    label(for='username') Username:
+    br
+    input#username(name='username')
+    br
+    br
+    label(for='password') Password:
+    br
+    input#password(input type="password" name='password')
+    br
+    br
+    input(type='submit', value="Log in")#send
+    p
+        | Don't have an account?  
+        a(href="/register") Click here 
+        | to register
+p
+    a(href="/") Return home

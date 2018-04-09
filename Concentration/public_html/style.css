@@ -1,0 +1,104 @@
+/*
+	COMP 2406A (Winter 2017): Assignment #2 - Altin Rexhepaj (101000622)
+	Sources: Professor's course notes (Dr. Andrew Runka)
+*/
+
+@charset "utf-8";
+html {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: #333333;
+    font-family: 'century gothic';
+}
+
+p {
+    font-size: 18px;
+    color: white:
+}
+
+small {
+    font-size: 10px;
+    color: white;
+}
+
+select {
+    font-family: 'century gothic';
+    border-radius: 5px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+}
+
+hr {
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    padding: 5px 20px 5px 20px;
+    background-color: #444;
+    border: solid 1px #355;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.block {
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    color: white;
+    background-color: #444;
+    border: solid 1px #355;
+    border-radius: 10px;
+}
+
+div.tile {
+    box-shadow: 2px 2px rgb(51, 51, 51);
+    background-color: rgb(90, 90, 90);
+    font-weight: bold;
+    font-family: 'century gothic';
+    border: 1px dashed white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    vertical-align: top;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+}
+
+div.tile:hover {
+    cursor: pointer;
+}
+
+div.tile span {
+    color: black;
+    font-size: 25px;
+}
+
+#level {
+    text-shadow: 2px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#showAnswers {
+    cursor: pointer;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0));
+}

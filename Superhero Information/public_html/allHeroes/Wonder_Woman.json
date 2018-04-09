@@ -1,0 +1,7 @@
+{
+	"name":"Wonder Woman",
+	"alterEgo":"Diana Prince",
+	"jurisdiction": "Earth and beyond",
+	"superpowers":["Divine Empowerment", "Enhanced Senses", "Flight", "Intelligence", "Super Speed", "Super Strength"],
+	"style":{"backgroundColor":"#0352A5","color":"#bfa135", "borderColor":"#de0405"}
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Simple-Chat-Server",
+    "version": "1.0.0",
+    "description": "Chat server made using socket.io.",
+    "main": "server.js",
+    "author": "Altin Rexhepaj",
+    "license": "ISC",
+    "dependencies": {
+    "socket.io": "^1.5.1"
+    }
+}

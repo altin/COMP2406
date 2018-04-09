@@ -1,0 +1,7 @@
+{
+	"name":"Batman",
+	"alterEgo":"Bruce Waynce",
+	"jurisdiction": "Gotham City",
+	"superpowers":["Intelligence", "Wealth", "Weapons Master", "Stealth", "Enhanced Reflexes"],
+	"style":{"backgroundColor":"#6c6c6e","color":"#000000","borderColor":"#d96b17"}
+}

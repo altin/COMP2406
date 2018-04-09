@@ -1,0 +1,67 @@
+//-
+    COMP 2406A (Winter 2017): Assignment #4 - Altin Rexhepaj (101000622)
+    Sources: Professor's course notes (Dr. Andrew Runka)
+
+block head
+    title Recipes Database
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="./public/recipePage.js")
+    link(rel="stylesheet", href="./public/style.css")
+
+block content
+    h1 Recipes Database
+
+    if user && user.auth
+        h2 Welcome, #[span#name=user.username]
+        a(href="/logout") Log out
+        br
+        br
+
+        label Recipe:
+        br
+        select#recipeSelect
+        br
+        button#recipeViewButton View
+
+        hr
+        br
+        label Name:
+        br
+        input#recipeName
+        br
+        br
+
+        label Duration (in minutes):
+        br
+        input#recipeDuration
+        br
+        br
+
+        label Ingredients:
+        br
+        textarea#recipeIngredients
+        br
+        br
+
+        label Steps:
+        br
+        textarea#recipeDirections
+        br
+        br
+
+        label Notes:
+        br
+        textarea#recipeNotes
+        br
+
+        button#recipeSubmitButton Submit
+        div#confirmed
+            span.check &#10004
+
+    else
+        h2 You are not currently logged in.
+        p You can #[a(href="/login") login] or #[a(href="/register") register].
+        
+    script.
+        document.querySelector("#confirmed").style.display = "none";
+        

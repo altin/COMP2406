@@ -1,0 +1,160 @@
+<!--
+	COMP 2406A (Fall 2016): Assignment #2 - Altin Rexhepaj (101000622)
+	Sources: Professor's course notes (Dr. Andrew Runka)
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8" />
+	<title>Heroes</title>
+	<!-- R2.7) -->
+	<link rel="stylesheet" type="text/css" href="template.css" title="main" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<small>COMP 2406A (Winter 2017): Assignment #1 - Altin Rexhepaj (101000622)</small>
+</head>
+<body>
+	<div id="title" class="header">
+		<h1>Heroes</h1>
+	</div>
+
+	<div id = "main" class="block">
+		<!-- R2.1) -->
+
+		<!-- drop down menu -->
+		<label for="heroes">Hero:</label><br/><br/>
+		<select name="heroes" id="heroes"></select><br/><br/>
+
+		<!-- view button -->
+		<input id ="viewButton" type="button" value="View" />
+
+		<hr>
+
+		<div id = "heroDiv">
+			<!-- name input text field -->
+			<label for="name">Name:</label><br/>
+			<input type="text" id="heroName" name="name" style="width: 200px;"><br/><br/>
+
+			<!-- alter ego text area -->
+			<label for="alterEgo">Alter Ego:</label><br/>
+			<input type="alterEgo" id="heroAlterEgo" style="width: 200px;"></textarea><br/><br/>
+
+			<!-- jurisdiction text area -->
+			<label for="jurisdiction">Jurisdiction:</label><br/>
+			<input type="jurisdiction" id="heroJurisdiction" style="width: 200px;"></textarea><br/><br/>
+
+			<!-- superpowers text area -->
+			<label for="superpowers">Superpowers:</label><br/>
+			<textarea name="superpowers" id="heroSuperpowers" style="width:250px; height:120px;"></textarea>
+		<div>
+
+	</div>
+	<!-- start of javascript -->
+	<script>
+
+		// setting up new xhr object to request the heroes directory
+		var xhr = new XMLHttpRequest();
+		/*
+			----- R2.2)
+		*/
+		xhr.open("GET","/allHeroes", true);
+
+		// referring to the heroes drop down list by the var 'heroes'
+		var heroes = document.getElementById("heroes");
+
+		// load event callback set up for the xhr object
+		xhr.addEventListener('load', function(){
+
+			// parsing the request response text to a variable called listOfNames
+			var listOfNames = JSON.parse(xhr.responseText);
+
+			// same as above except this one will have no .json extension
+			// to be used in conjuction with the XMLHttp GET Request
+			var heroNamesNoExt = JSON.parse(xhr.responseText);
+
+			for(var i = 0; i < heroNamesNoExt.length; i++){
+				heroNamesNoExt[i] = heroNamesNoExt[i].replace(".json", "");
+			}
+
+			// same as above except this one will be modified as seen below
+			var heroNames = JSON.parse(xhr.responseText);
+
+			/*
+				----- R2.3)
+			*/
+			// removing underlines and file extension from filenames
+			for(var i = 0; i < heroNames.length; i++){
+				heroNames[i] = heroNames[i].replace(".json", "");
+				for(var j = 0; j < heroNames[i].length; j++){
+					if(heroNames[i].charAt(j) == "_"){
+						heroNames[i] = heroNames[i].replace("_"," ");
+					}
+				}
+			}
+
+			// populating drop down list
+			for(var i = 0; i < heroNames.length; i++){
+				heroes.innerHTML += '<option value="' + heroNames[i] + '">'
+				 	+ heroNames[i] + '</option>';
+			}
+
+			/*
+				----- R2.4)
+			*/
+			// click event callback set up for the view button
+			document.getElementById("viewButton").addEventListener('click', function(){
+				// another xhr request object called xhr2
+				var xhr2 = new XMLHttpRequest();
+
+				/*
+					----- R3.2)
+				*/
+				// requesting the specific hero string file through the indexation
+				// of the listOfNames JSON object (determined by .selectedIndex)
+				xhr2.open("GET","/hero?name=" + heroNamesNoExt[heroes.selectedIndex], true);
+
+				// load event callback set up for the second (xhr2) object
+				xhr2.addEventListener('load', function(){
+					// parsing the request response text to a variable called heroFileObj
+					var heroObjFile = JSON.parse(xhr2.responseText);
+					// giving each property in the hero object a variable name
+					var name = heroObjFile.name;
+					var alterEgo = heroObjFile.alterEgo;
+					var jurisdiction = heroObjFile.jurisdiction;
+					var superpowers = "";
+					var style = heroObjFile.style;
+
+					/*
+						----- R2.5)
+					*/
+					// breaking superpowers into new lines and storing in var
+					for(var i = 0; i < heroObjFile.superpowers.length; i++){
+						superpowers += heroObjFile.superpowers[i] + "\n";
+						if(i == heroObjFile.superpowers.length - 1){
+							break;
+						}
+						else{ // this elimates the trailing line break
+							alterEgo += '\n';
+						}
+					}
+
+					// filling up the appropriate text fields with object data
+					document.getElementById("heroName").value = name;
+					document.getElementById("heroAlterEgo").value = alterEgo;
+					document.getElementById("heroJurisdiction").value = jurisdiction;
+					document.getElementById("heroSuperpowers").value = superpowers;
+
+					// changing div background color depending on which hero is selected
+					for (var key in style) {
+						console.log("1 " + document.getElementById('heroDiv').style[key]);
+						console.log("2 " + style[key]);
+						document.getElementById('heroDiv').style[key] = style[key];
+					}
+				});
+				xhr2.send(); // sending xhr2 request, and executing its callback
+			});
+		});
+		xhr.send(); // sending xhr request, and executing its callback
+	</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+/*
+	COMP 2406A (Winter 2017): Assignment #3 - Altin Rexhepaj
+	Sources: Professor's course notes (Dr. Andrew Runka)
+*/
+
+@charset "utf-8";
+html {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: #333333;
+    font-family: 'Verdana';
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p {
+    font-size: 14px;
+    color: white:
+}
+
+small {
+    font-size: 10px;
+    color: white;
+}
+
+select {
+    font-family: 'Verdana';
+    border-radius: 5px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+}
+
+hr {
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0));
+}
+
+h1 {
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    padding: 5px 20px 5px 20px;
+    background-color: #444;
+    border: solid 1px #355;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.block {
+    position: relative;
+    padding: 20px;
+    color: white;
+    background-color: #444;
+    border: solid 1px #355;
+    border-radius: 10px;
+}
+
+.blockedUser {
+    text-decoration: line-through;
+}
+
+#chatLog, #messageBar, #activeUsersContainer {
+    border-radius: 10px;
+    background-color: rgb(31, 31, 31);
+    border: solid 1px #008d8a;
+    color: #cccccc;
+    box-shadow: 2px 2px 2px black;
+}
+
+#messageBar {
+    width: 80%;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+#chatLogContainer {
+    width: 100%;
+}
+
+#chatLog, #activeUsersContainer {
+    background-color: rgb(31, 31, 31);
+    color: #cccccc;
+}
+
+#chatLog {
+    height: 200px;
+    font-size: 15px;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    font-family: Verdana;
+}
+
+#chatLogContainer {
+    width: 80%;
+    height: 100%;
+    float: left;
+    padding: 0px 0px 10px 10px;
+}
+
+#activeUsersContainer {
+    padding: 10px;
+    border: solid 1px #008d8a;
+    height: 247px;
+    overflow: auto;
+    padding: 10px;
+    width: 100px;
+    float: left;
+}

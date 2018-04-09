@@ -1,0 +1,7 @@
+{
+	"name":"Wolverine",
+	"alterEgo":"Logan",
+	"jurisdiction": "North America",
+	"superpowers":["Adamantium Skeleton", "Enhanced Healing", "Enhanced Senses", "Regeneration", "Retractable Adamantium Claws"],
+	"style":{"backgroundColor":"#ffc72c","color":"#0066ff"}
+}

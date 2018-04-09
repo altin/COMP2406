@@ -1,10 +1,6 @@
 # COMP 2406
 ## Fundamentals of Web Applications
 
-### Grade Received: A
-The course assignments I completed in COMP 2406.  
-Each assignment received a grade of 100%.
-
 #### Topics Learned
 * Web Concepts, HTTP  
 * Javascript, Javascripit API's (Express, MongoDB, Pug)

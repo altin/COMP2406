@@ -1,9 +1,9 @@
-# COMP 2406
+# COMP 2406, Winter 2017
 ## Fundamentals of Web Applications
 
 #### Topics Learned
 * Web Concepts, HTTP  
-* Javascript, Javascripit API's (Express, MongoDB, Pug)
+* Javascript
 * Client and Server side coding (in Javascript)  
 * Markup Languages (HTML, CSS)   
 * Javascript execution environments: Browser, Node.js and Express.js framework  

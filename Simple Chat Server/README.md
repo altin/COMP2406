@@ -10,6 +10,9 @@ A minimalistic chat server with user muting and private messaging capabilities.
 * Open your browser, then type and enter ```localhost:2406``` in the address bar
   * Repeat this each time in a new tab to create a new user
 
+### Screenshot
+![image](https://github.com/altin/COMP2406/blob/master/Simple%20Chat%20Server/screenshot.PNG)
+
 ### Development Details
 #### Firefox, Windows 8.1 x64
 * HTML, CSS  
